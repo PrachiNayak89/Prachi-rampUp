@@ -2,29 +2,40 @@
 import random
 #this program is to create the cows and bulls game for user
 
-def game(userInput):
-    numbers=range(0000,9999)
-    randomNum=random.choice(numbers)
+def game(userInput,randomNum):
     randomNum=str(randomNum)
-    randomNum=list(randomNum.split())
-    #userInput=int(userInput)
-    userInput=list(userInput)
-    countCow=0
-    countBull=0
+    userInput=str(userInput)
+    countCowBull=[0,0]
+
     for i in range(len(randomNum)):
-        for j in range(len(userInput)):
-            if randomNum[i]==userInput[j]:
-                countCow=countCow+1
+        if userInput[i] in randomNum:
+            if randomNum[i]==userInput[i]:
+                countCowBull[0]+=1
             else:
-                countBull=countBull+1
+                countCowBull[1]+=1
+    
+    return countCowBull;
 
-    print 'random num :' , ' '.join(randomNum)
-    print 'Cow count :', countCow
-    print 'Bull count :' ,countBull
+#generating random number
+numbers=range(1000,9999)
+randomNumber=random.choice(numbers)
+print 'Random Numer',randomNumber
+num=None
+tries=0
+while num!="exit":
+    num=raw_input('Please guess 4 digit number :')
 
-    return countCow,countBull;
+    if num=="exit":
+        break
+    tries+=1
+    numConverted=int(num)
 
-num=raw_input('Please guess 4 digit number :')
+    if numConverted==randomNumber:
+        print 'Whoohaa! you have guessed the correct number! You have tried ',tries,' times'
+        break
+    
+    cowBull= game(num,randomNumber)
 
-game(num)
-               
+    print 'Cows :', cowBull[0]
+    print 'Bulls :', cowBull[1]
+
