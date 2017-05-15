@@ -10,11 +10,15 @@ userInput=None
 while userInput != num and userInput != "exit":
     try:
         userInput= raw_input('Please guess the number between 1 to 9 :')
+        count+=1        
+        if count==3:
+            print 'Maximum 3 tries allowed! Correct number was: ', num
+            break
 
         if userInput=="exit":
             break
-        print 'Random number :', num
-        print 'Guessed number :' , userInput
+        #print 'Random number :', num
+        #print 'Guessed number :' , userInput
 
         userInput=int(userInput)
 
@@ -27,12 +31,11 @@ while userInput != num and userInput != "exit":
         else:
             print 'Invalid input! Please try again'
 
-        count+=1
 
     except ValueError:
         print 'Invalid input! Please enter numeber between 1 to 9'
 
-print 'You have guessed number %d time!'% (count)
+#print 'You have guessed number exact %d times!'% (count)
 
 
 
