@@ -23,7 +23,7 @@ def userInput():
     userInput2=None
     while True and userInput1!="exit" and userInput2!="exit":
         if count%2!=0:
-            userInput1=raw_input('Player 1 please enter row <space> col for number in position :')
+            userInput1=raw_input('Player 1 please enter row <space> col for number position :')
             if userInput1=="exit":
                 break
             rowCol=userInput1.split(" ")
@@ -44,7 +44,7 @@ def userInput():
             break
         
         if count%2==0:
-            userInput2=raw_input('Player 2 please enter row <space> col for number in position :')
+            userInput2=raw_input('Player 2 please enter row <space> col for number position :')
             if userInput2=="exit":
                 break
             rowCol=userInput2.split(" ")
@@ -81,7 +81,7 @@ def checkTheWinner(gameToBeChecked):
 
     if len(diagonal1)==1 or len(diagonal2)==1 and gameToBeChecked[1][1]!=0:
         return gameToBeChecked[1][1]
-
+    return 0;
 
 #Writing the main function
 def main():
@@ -93,17 +93,23 @@ def main():
             game1=userInput()
             
             if checkTheWinner(game1)==1:
-                print 'Player 1 won!'
+                print 'Player 1 won!\n'
                 user1count+=1
             elif checkTheWinner(game1)==2:
-                print 'Player 2 won!'
+                print 'Player 2 won!\n'
                 user2count+=1
+            else:
+                print 'No one won! Try again if you wish to.!\n'
 
         except IndexError:
             print 'Please enter position index rows and col in 1 to 3 range'
             continue
+        
+        except ValueError:
+            print'Invalid input! Please enter position index rows and col in 1 to 3 range'
+            continue
 
-        answer=raw_input('Do you want to play more? yes or no?')
+        answer=raw_input('Do you want to play more? yes or no? :')
 
     print 'Player 1 wins :'+str(user1count)+' matches and Player 2 wins :'+str(user2count)+' matches'
 
