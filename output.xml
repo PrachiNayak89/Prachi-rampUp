@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170519 15:17:57.618" generator="Robot 3.0.2 (Python 2.7.13 on linux2)">
+<suite source="/home/prachi/gitHub/Prachi-rampUp/firstTest.robot" id="s1" name="firstTest">
+<test id="s1-t1" name="[TC-001]-Launching the browser and search and launch the Google.com">
+<kw name="Launch Browser">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170519 15:17:57.699" level="INFO">Opening browser 'firefox' to base url 'https://www.amazon.in'</msg>
+<status status="PASS" endtime="20170519 15:18:06.994" starttime="20170519 15:17:57.699"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170519 15:18:07.014" starttime="20170519 15:18:06.995"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170519 15:18:07.130" starttime="20170519 15:18:07.014"></status>
+</kw>
+<status status="PASS" endtime="20170519 15:18:07.130" starttime="20170519 15:17:57.698"></status>
+</kw>
+<status status="PASS" endtime="20170519 15:18:07.131" critical="yes" starttime="20170519 15:17:57.698"></status>
+</test>
+<status status="PASS" endtime="20170519 15:18:07.133" starttime="20170519 15:17:57.619"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="firstTest" pass="1">firstTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
